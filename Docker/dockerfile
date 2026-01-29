@@ -1,0 +1,16 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+#COPY main.py
+#COPY requirements.txt
+#powyzsze linie moga byc zastapiane przez:
+COPY . .
+#powyzsze oznacza, ze kopiujemy zrodlowa sciezke
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 8000
+
+
+CMD python -c "print('hello world')"
